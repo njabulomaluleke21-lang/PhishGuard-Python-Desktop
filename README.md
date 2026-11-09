@@ -1,21 +1,36 @@
-# Phishing Detection System — Python desktop
+# PhishGuard — Python Desktop Application
 
-A beginner-friendly student project using Python Tkinter and SQLite. It checks emails for rule-based warning signs. It does not use machine learning.
+A beginner-friendly phishing email checker built with Python, Tkinter and SQLite. The detector uses a set of readable rules and warning indicators; it does not use machine learning.
 
-## Run in Thonny
-1. Open `desktop.py` in Thonny. Keep `core.py` in the same folder.
-2. Select Run > Run current script (F5).
-3. Demo login: `admin` / `DemoPass!2026`. Change the password in Admin after demonstrating.
+## Run the application
 
-## Functions
-- Login and analyst/admin roles; passwords hashed using PBKDF2.
-- Email validation and rule-based risk scoring.
-- Saved scan history in SQLite (`data/phishing_desktop.sqlite3` is created automatically).
-- CSV reports from saved records.
-- Admin creates users and backs up/restores the database.
+1. Download this repository using **Code → Download ZIP**, then extract it.
+2. Keep `desktop.py` and `core.py` together in the same folder.
+3. Open `desktop.py` in Thonny and press **F5**, or double-click `START_DESKTOP.bat` on Windows.
+4. On first run, the application creates the `data/` folder and its SQLite database automatically.
 
-## GitHub
-Upload `desktop.py`, `core.py`, `START_DESKTOP.bat`, `.gitignore`, and this README to a new public GitHub repository. Do not upload the `data/` folder or private sample emails. GitHub hosts the code; the desktop system runs locally on your computer.
+Demo login for a fresh database: **admin** / **DemoPass!2026**. Change the demo password from the Admin / backup tab before using the application with any real information.
 
-## Limits
-Rule-based warnings cannot guarantee that a message is safe or malicious. For demonstration and learning, not production email security.
+## Main features
+
+- Admin and analyst login roles.
+- Password hashing with PBKDF2-HMAC-SHA256.
+- Email address and input validation.
+- Rule-based phishing warning indicators and risk scoring.
+- Scan history stored in SQLite.
+- Dashboard statistics and CSV report export.
+- Administrator tools to create users, change passwords, and back up or restore the SQLite database.
+
+## Database and privacy
+
+The database is created locally at `data/phishing_desktop.sqlite3`. It stays on the computer where the application is run; it is not included in this GitHub repository. The `.gitignore` file excludes the database folder, SQLite files, CSV exports and Python cache files.
+
+Do not commit real email contents, personal information, passwords or database backups to a public repository.
+
+## GitHub repository
+
+This repository contains the Python source code and run instructions. GitHub stores the project files; the desktop application runs locally on Windows with Python and Tkinter.
+
+## Limitations
+
+The detector is rule-based. A low score does not prove that an email is safe, and a high score is a warning for further review rather than a definitive verdict. This project is intended for learning and demonstration, not production email security.
